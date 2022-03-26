@@ -1,0 +1,9 @@
+rootProject.name = 'spring-boot-micro'
+include 'account-service'
+include 'bill-service'
+include 'deposit-service'
+include 'gateway'
+include 'config-service'
+include 'notification-service'
+include 'registry-discovery-service'
+
