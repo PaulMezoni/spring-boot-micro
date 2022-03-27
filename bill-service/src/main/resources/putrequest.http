@@ -1,0 +1,11 @@
+###
+POST http://localhost:8082/bills/
+{
+"accountId": 1,
+"amount": 3000,
+"isDefault": true,
+"overDraftEnabled": "true"
+}
+
+###
+GET http://localhost:8882/bills/1
