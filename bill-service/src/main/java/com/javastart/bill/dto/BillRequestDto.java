@@ -9,9 +9,9 @@ import java.time.OffsetDateTime;
 @Getter
 @AllArgsConstructor
 public class BillRequestDto {
-    private Long accountId;
-    private BigDecimal amount;
-    private Boolean isDefault;
-    private OffsetDateTime creationDate;
-    private Boolean overdraftEnabled;
+    private final Long accountId;
+    private final BigDecimal amount;
+    private final Boolean isDefault;
+    private final OffsetDateTime creationDate;
+    private final Boolean overdraftEnabled;
 }
