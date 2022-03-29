@@ -1,18 +1,22 @@
 package com.javastart.bill.dto;
 
 import com.javastart.bill.entity.Bill;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 
+@Getter
+@NoArgsConstructor
 public class BillResponseDto {
-    private final Long billId;
+    private Long billId;
 
-    private final Long accountId;
-    private final BigDecimal amount;
-    private final Boolean isDefault;
-    private final OffsetDateTime creationDate;
-    private final Boolean overdraftEnabled;
+    private Long accountId;
+    private BigDecimal amount;
+    private Boolean isDefault;
+    private OffsetDateTime creationDate;
+    private Boolean overdraftEnabled;
 
     public BillResponseDto(Bill bill) {
         this.billId = bill.getBillId();

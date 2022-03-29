@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
+import java.util.List;
+
 @Service
 public class BillService {
     private final BillRepository billRepository;
@@ -39,5 +41,9 @@ public class BillService {
         Bill deleteBill = getBillById(billId);
         billRepository.deleteById(billId);
         return deleteBill;
+    }
+
+    public List<Bill> getBillsByAccountId(Long accountId) {
+        return billRepository.getBillsByAccountId(accountId);
     }
 }

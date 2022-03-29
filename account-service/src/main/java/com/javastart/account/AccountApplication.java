@@ -9,5 +9,6 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 public class AccountApplication {
     public static void main(String[] args) {
         SpringApplication.run(AccountApplication.class, args);
+        System.out.println("Start: " + AccountApplication.class);
     }
 }

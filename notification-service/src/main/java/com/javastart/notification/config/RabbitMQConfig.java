@@ -13,12 +13,8 @@ public class RabbitMQConfig {
     public static final String TOPIC_EXCHANGE_DEPOSIT = "js.deposit.notify.exchange";
     public static final String ROUTING_KEY_DEPOSIT = "js.key.deposit";
 
-    private final AmqpAdmin amqpAdmin;
-
     @Autowired
-    public RabbitMQConfig(AmqpAdmin amqpAdmin) {
-        this.amqpAdmin = amqpAdmin;
-    }
+    private AmqpAdmin amqpAdmin;
 
     @Bean
     public TopicExchange depositExchange() {
@@ -30,6 +26,7 @@ public class RabbitMQConfig {
         return new Queue(QUEUE_DEPOSIT);
     }
 
+    @Bean
     public Binding depositBinding() {
         return BindingBuilder
                 .bind(queueDeposit())
