@@ -4,6 +4,7 @@ import com.javastart.bill.dto.BillRequestDto;
 import com.javastart.bill.dto.BillResponseDto;
 import com.javastart.bill.service.BillService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,6 +31,8 @@ public class BillController {
     }
 
     @PutMapping("{billId}")
+    @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
+//    @ResponseBody("{billId}")
     public BillResponseDto updateBill(@PathVariable Long billId,
                                       @RequestBody BillRequestDto billRequestDto) {
         return new BillResponseDto(billService.updateBill(billId,
