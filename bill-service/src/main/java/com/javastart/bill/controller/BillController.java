@@ -3,7 +3,6 @@ package com.javastart.bill.controller;
 import com.javastart.bill.dto.BillRequestDto;
 import com.javastart.bill.dto.BillResponseDto;
 import com.javastart.bill.service.BillService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,7 +13,6 @@ import java.util.stream.Collectors;
 public class BillController {
     private final BillService billService;
 
-    @Autowired
     public BillController(BillService billService) {
         this.billService = billService;
     }

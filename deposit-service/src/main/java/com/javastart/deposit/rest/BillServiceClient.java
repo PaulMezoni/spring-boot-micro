@@ -1,5 +1,7 @@
 package com.javastart.deposit.rest;
 
+import com.javastart.deposit.dto.BillRequestDto;
+import com.javastart.deposit.dto.BillResponseDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 

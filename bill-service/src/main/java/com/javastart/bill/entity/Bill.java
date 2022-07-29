@@ -13,7 +13,6 @@ import java.time.OffsetDateTime;
 @Getter
 @Setter
 @NoArgsConstructor
-@ToString
 public class Bill {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -40,5 +39,17 @@ public class Bill {
         this.amount = amount;
         this.isDefault = isDefault;
         this.overdraftEnabled = overdraftEnabled;
+    }
+
+    @Override
+    public String toString() {
+        return "Bill{" +
+                "billId=" + billId +
+                ", accountId=" + accountId +
+                ", amount=" + amount +
+                ", isDefault=" + isDefault +
+                ", creationDate=" + creationDate +
+                ", overdraftEnabled=" + overdraftEnabled +
+                '}';
     }
 }

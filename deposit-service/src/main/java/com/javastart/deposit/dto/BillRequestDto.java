@@ -1,4 +1,4 @@
-package com.javastart.deposit.rest;
+package com.javastart.deposit.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

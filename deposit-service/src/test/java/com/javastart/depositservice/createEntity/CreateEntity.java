@@ -1,7 +1,7 @@
 package com.javastart.depositservice.createEntity;
 
-import com.javastart.deposit.rest.AccountResponseDto;
-import com.javastart.deposit.rest.BillResponseDto;
+import com.javastart.deposit.dto.AccountResponseDto;
+import com.javastart.deposit.dto.BillResponseDto;
 
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
