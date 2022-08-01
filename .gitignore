@@ -19,6 +19,7 @@ gateway/build.gradle
 
 notification-service/build
 notification-service/build.gradle
+notification-service/src/main/resources/mail-props.properties
 
 registry-discovery-service/build
 registry-discovery-service/build.gradle

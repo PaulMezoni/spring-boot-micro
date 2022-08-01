@@ -6,6 +6,8 @@ import com.javastart.account.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 public class  AccountController {
     private final AccountService accountService;
@@ -21,7 +23,7 @@ public class  AccountController {
     }
 
     @PostMapping("/")
-    public Long createAccount(@RequestBody AccountRequestDto accountRequestDto) {
+    public Long createAccount(@Valid @RequestBody AccountRequestDto accountRequestDto) {
         return accountService.createAccount(
                 accountRequestDto.getName(), accountRequestDto.getEmail(),
                 accountRequestDto.getPhone(), accountRequestDto.getBills);
