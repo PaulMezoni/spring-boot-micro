@@ -9,8 +9,8 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableDiscoveryClient
 @EnableFeignClients
 public class DepositApplication {
+
     public static void main(String[] args) {
         SpringApplication.run(DepositApplication.class, args);
-        System.out.println("Start: " + DepositApplication.class);
     }
 }

@@ -7,8 +7,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @SpringBootApplication
 @EnableDiscoveryClient
 public class BillApplication {
+
     public static void main(String[] args) {
         SpringApplication.run(BillApplication.class, args);
-        System.out.println("Start: " + BillApplication.class);
     }
 }

@@ -1,7 +1,7 @@
 package com.javastart.deposit.controller;
 
-import com.javastart.deposit.dto.DepositRequestDto;
-import com.javastart.deposit.dto.DepositResponseDto;
+import com.javastart.deposit.controller.dto.DepositRequestDTO;
+import com.javastart.deposit.controller.dto.DepositResponseDTO;
 import com.javastart.deposit.service.DepositService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class DepositController {
+
     private final DepositService depositService;
 
     @Autowired
@@ -18,9 +19,7 @@ public class DepositController {
     }
 
     @PostMapping("/deposits")
-    public DepositResponseDto deposit(@RequestBody DepositRequestDto depositRequestDto) {
-        return depositService.deposit(depositRequestDto.getAccountId(),
-                depositRequestDto.getBillId(),
-                depositRequestDto.getAmount());
+    public DepositResponseDTO deposit(@RequestBody DepositRequestDTO requestDTO) {
+        return depositService.deposit(requestDTO.getAccountId(), requestDTO.getBillId(), requestDTO.getAmount());
     }
 }

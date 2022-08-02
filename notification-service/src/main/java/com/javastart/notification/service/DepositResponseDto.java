@@ -7,7 +7,9 @@ import java.math.BigDecimal;
 
 @Getter
 @Setter
-public class DepositResponseDto {
+public class DepositResponseDTO {
+
     private BigDecimal amount;
+
     private String mail;
 }

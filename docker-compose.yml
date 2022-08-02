@@ -4,26 +4,26 @@ services:
     container_name: config-service
     build: config-service
     ports:
-    - 8001:8001
+      - 8001:8001
 
-  registry-discovery-service:
-    container_name: registry-discovery-service
+  registry:
+    container_name: registry
     restart: always
-    build: registry-discovery-service
+    build: registry
     ports:
-    - 8761:8761
-    depends-on:
-    - config-service
+      - 8761:8761
+    depends_on:
+      - config-service
 
   gateway:
     container_name: gateway
     restart: always
     build: gateway
     ports:
-    - 8989:8989
+      - 8989:8989
     depends_on:
-    - config-service
-    - registry
+      - config-service
+      - registry
 
   account-service:
     restart: on-failure
@@ -48,7 +48,6 @@ services:
   deposit-service:
     restart: on-failure
     container_name: deposit-service
-    #    image: deposit-service-test3:latest
     build: deposit-service
     ports:
       - 9090:9090

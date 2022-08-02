@@ -14,15 +14,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 @Configuration
-@Profile("test")
-public class SpringH2DataBaseConfig {
-
-    @Autowired
-    private final Environment environment;
-
-    public SpringH2DataBaseConfig(Environment environment) {
-        this.environment = environment;
-    }
+@Profile("Test")
+public class SpringH2DatabaseConfig {
 
     @Bean
     @Profile("test")
@@ -51,6 +44,4 @@ public class SpringH2DataBaseConfig {
         transactionManager.setEntityManagerFactory(entityManagerFactory);
         return transactionManager;
     }
-
-
 }

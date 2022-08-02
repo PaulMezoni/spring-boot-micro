@@ -13,16 +13,14 @@ import java.util.Properties;
 @Configuration
 @PropertySource("classpath:mail-props.properties")
 public class MailConfig {
-    private final Environment environment;
-@Autowired
-    public MailConfig(Environment environment) {
-        this.environment = environment;
-    }
+
+    @Autowired
+    private Environment environment;
 
     @Bean
     public JavaMailSender javaMailSender() {
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
-        mailSender.setHost("smtp.gmail.com");
+        mailSender.setHost("smpt.gmail.com");
         mailSender.setPort(587);
 
         mailSender.setUsername(environment.getProperty("mail.username"));
@@ -35,5 +33,4 @@ public class MailConfig {
         properties.put("mail.debug", environment.getProperty("mail.debug"));
         return mailSender;
     }
-
 }

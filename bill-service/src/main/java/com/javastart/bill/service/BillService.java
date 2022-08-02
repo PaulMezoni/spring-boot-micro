@@ -12,6 +12,7 @@ import java.util.List;
 
 @Service
 public class BillService {
+
     private final BillRepository billRepository;
 
     @Autowired
@@ -20,12 +21,11 @@ public class BillService {
     }
 
     public Bill getBillById(Long billId) {
-        return billRepository.findById(billId).orElseThrow(
-                () -> new BillNotFoundException("Unable to find with id: " + billId));
+        return billRepository.findById(billId)
+                .orElseThrow(() -> new BillNotFoundException("Unable to find bill with id: " + billId));
     }
 
-    public Long createBill(Long accountId, BigDecimal amount,
-                           Boolean isDefault, Boolean overdraftEnabled) {
+    public Long createBill(Long accountId, BigDecimal amount, Boolean isDefault, Boolean overdraftEnabled) {
         Bill bill = new Bill(accountId, amount, isDefault, OffsetDateTime.now(), overdraftEnabled);
         return billRepository.save(bill).getBillId();
     }
@@ -38,9 +38,9 @@ public class BillService {
     }
 
     public Bill deleteBill(Long billId) {
-        Bill deleteBill = getBillById(billId);
+        Bill deletedBill = getBillById(billId);
         billRepository.deleteById(billId);
-        return deleteBill;
+        return deletedBill;
     }
 
     public List<Bill> getBillsByAccountId(Long accountId) {
